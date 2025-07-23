@@ -1,10 +1,35 @@
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, Float } from '@react-three/drei';
+import * as THREE from 'three';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Search, ArrowRight, Users, Building, TrendingUp } from 'lucide-react';
-import * as THREE from 'three';
+
+// Simple floating sphere component using native Three.js
+const FloatingSphere = ({ position, color, size }: { position: [number, number, number], color: string, size: number }) => {
+  const meshRef = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 2) * 0.2;
+      meshRef.current.rotation.x = state.clock.elapsedTime * 0.3;
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.2;
+    }
+  });
+
+  return (
+    <mesh ref={meshRef} position={position}>
+      <sphereGeometry args={[size, 32, 32]} />
+      <meshStandardMaterial 
+        color={color}
+        roughness={0.1}
+        metalness={0.8}
+        emissive={color}
+        emissiveIntensity={0.1}
+      />
+    </mesh>
+  );
+};
 
 // 3D Scene Components
 const FloatingElements = () => {
@@ -18,55 +43,25 @@ const FloatingElements = () => {
 
   return (
     <group ref={groupRef}>
-      <Float speed={1.4} rotationIntensity={1} floatIntensity={2}>
-        <Sphere args={[0.8, 64, 64]} position={[2, 0, 0]}>
-          <meshStandardMaterial 
-            color="#6366f1"
-            roughness={0.1}
-            metalness={0.8}
-            emissive="#6366f1"
-            emissiveIntensity={0.1}
-          />
-        </Sphere>
-      </Float>
-      
-      <Float speed={1.8} rotationIntensity={2} floatIntensity={1.5}>
-        <Sphere args={[0.6, 32, 32]} position={[-2, 1, -1]}>
-          <meshStandardMaterial 
-            color="#8b5cf6"
-            roughness={0.2}
-            metalness={0.7}
-            emissive="#8b5cf6"
-            emissiveIntensity={0.1}
-          />
-        </Sphere>
-      </Float>
-      
-      <Float speed={1.2} rotationIntensity={0.5} floatIntensity={3}>
-        <Sphere args={[0.4, 32, 32]} position={[0, -1, 1]}>
-          <meshStandardMaterial 
-            color="#06b6d4"
-            roughness={0.3}
-            metalness={0.6}
-            emissive="#06b6d4"
-            emissiveIntensity={0.1}
-          />
-        </Sphere>
-      </Float>
+      <FloatingSphere position={[2, 0, 0]} color="#6366f1" size={0.8} />
+      <FloatingSphere position={[-2, 1, -1]} color="#8b5cf6" size={0.6} />
+      <FloatingSphere position={[0, -1, 1]} color="#06b6d4" size={0.4} />
     </group>
   );
 };
 
 const Scene3D = () => {
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+    <Canvas 
+      camera={{ position: [0, 0, 5], fov: 75 }}
+      style={{ background: 'transparent' }}
+    >
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={1} />
       <pointLight position={[-10, -10, -10]} color="#8b5cf6" intensity={0.5} />
       
       <Suspense fallback={null}>
         <FloatingElements />
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
       </Suspense>
     </Canvas>
   );
