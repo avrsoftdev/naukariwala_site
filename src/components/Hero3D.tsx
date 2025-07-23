@@ -1,6 +1,6 @@
 import { Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial, Float, Text3D, Center } from '@react-three/drei';
+import { OrbitControls, Sphere, Float } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Search, ArrowRight, Users, Building, TrendingUp } from 'lucide-react';
@@ -20,34 +20,36 @@ const FloatingElements = () => {
     <group ref={groupRef}>
       <Float speed={1.4} rotationIntensity={1} floatIntensity={2}>
         <Sphere args={[0.8, 64, 64]} position={[2, 0, 0]}>
-          <MeshDistortMaterial
+          <meshStandardMaterial 
             color="#6366f1"
-            attach="material"
-            distort={0.3}
-            speed={2}
-            wireframe={false}
+            roughness={0.1}
+            metalness={0.8}
+            emissive="#6366f1"
+            emissiveIntensity={0.1}
           />
         </Sphere>
       </Float>
       
       <Float speed={1.8} rotationIntensity={2} floatIntensity={1.5}>
         <Sphere args={[0.6, 32, 32]} position={[-2, 1, -1]}>
-          <MeshDistortMaterial
+          <meshStandardMaterial 
             color="#8b5cf6"
-            attach="material"
-            distort={0.4}
-            speed={1.5}
+            roughness={0.2}
+            metalness={0.7}
+            emissive="#8b5cf6"
+            emissiveIntensity={0.1}
           />
         </Sphere>
       </Float>
       
       <Float speed={1.2} rotationIntensity={0.5} floatIntensity={3}>
         <Sphere args={[0.4, 32, 32]} position={[0, -1, 1]}>
-          <MeshDistortMaterial
+          <meshStandardMaterial 
             color="#06b6d4"
-            attach="material"
-            distort={0.2}
-            speed={3}
+            roughness={0.3}
+            metalness={0.6}
+            emissive="#06b6d4"
+            emissiveIntensity={0.1}
           />
         </Sphere>
       </Float>
