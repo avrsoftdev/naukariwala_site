@@ -25,7 +25,7 @@ const About = () => {
     {
       icon: Zap,
       title: 'Lightning Fast',
-      description: 'Experience blazing-fast job searches and applications with our optimized 3D platform.'
+      description: 'Experience blazing-fast job searches and applications with our optimized  platform.'
     },
     {
       icon: Shield,
@@ -81,7 +81,7 @@ const About = () => {
             About <span className="gradient-text">NaukariWala</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're revolutionizing the job search experience with cutting-edge 3D technology, 
+            We're revolutionizing the job search experience with cutting-edge technology, 
             connecting talented professionals with their dream opportunities.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ const About = () => {
           </h3>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             To transform the traditional job search experience by creating an immersive, 
-            3D platform that makes finding the perfect job as engaging and intuitive as it should be. 
+            platform that makes finding the perfect job as engaging and intuitive as it should be. 
             We believe that the right opportunity should find you, not the other way around.
           </p>
         </motion.div>

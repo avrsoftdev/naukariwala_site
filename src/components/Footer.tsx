@@ -79,7 +79,7 @@ const Footer = () => {
                 </div>
                 
                 <p className="text-muted-foreground leading-relaxed max-w-md">
-                  Revolutionizing job search with cutting-edge 3D technology. 
+                  Revolutionizing job search with cutting-edge technology. 
                   Find your dream job or hire the perfect candidate in our immersive platform.
                 </p>
 
@@ -90,11 +90,11 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <Phone className="w-4 h-4" />
-                    <span>+1 (555) 123-4567</span>
+                    <span>+91 7042028557</span>
                   </div>
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <MapPin className="w-4 h-4" />
-                    <span>123 Business Avenue, Tech City</span>
+                    <span>Khasra no. 279, Khera Chauganpur, Greater Noida, UP, India.</span>
                   </div>
                 </div>
 
@@ -184,7 +184,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-muted-foreground">
-                © 2024 NaukariWala. All rights reserved. Built with ❤️ using modern technology.
+                © 2024 NaukariWala. All rights reserved. 
               </p>
             </div>
             

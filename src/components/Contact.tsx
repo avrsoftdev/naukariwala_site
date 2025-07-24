@@ -42,19 +42,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email Us',
-      detail: 'hello@naukariwala.com',
+      detail: 'info@naukariwala.com',
       description: 'Send us an email anytime'
     },
     {
       icon: Phone,
       title: 'Call Us',
-      detail: '+1 (555) 123-4567',
+      detail: '+917042028577',
       description: 'Mon-Fri from 9am to 6pm'
     },
     {
       icon: MapPin,
       title: 'Visit Us',
-      detail: '123 Business Avenue, Tech City, TC 12345',
+      detail: 'Khasra no. 279, Khera Chauganpur, Greater Noida, UP, India',
       description: 'Come say hello at our office'
     },
     {

@@ -86,7 +86,7 @@ const Hero3D = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background/30" />
       
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 pt-20 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
           <motion.div
@@ -99,10 +99,10 @@ const Hero3D = () => {
               Find Your{' '}
               <span className="gradient-text animate-glow">Dream Job</span>
               <br />
-              in 3D Style
+            
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Experience job hunting like never before with our immersive 3D platform. 
+              Experience job hunting like never before with our immersive  platform. 
               Connect with top employers and discover opportunities that match your passion.
             </p>
           </motion.div>
