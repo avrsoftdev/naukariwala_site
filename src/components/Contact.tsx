@@ -11,6 +11,7 @@ import {
   Globe,
   CheckCircle
 } from 'lucide-react';
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,10 +32,9 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setTimeout(() => setIsSubmitted(false), 3000); // Reset isSubmitted after 3 seconds
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -65,13 +65,24 @@ const Contact = () => {
     }
   ];
 
+  // Google Map container style
+  const mapContainerStyle = {
+    height: '100%',
+    width: '100%',
+    borderRadius: '1rem'
+  };
+
+  // Center coordinates for the map
+  const center = {
+    lat: 28.5811,
+    lng: 77.4543
+  };
+
   return (
     <section id="contact" className="py-20 bg-background relative overflow-hidden">
-      {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
       
       <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +99,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -134,28 +144,29 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Interactive Map Placeholder */}
+            {/* Google Map */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="glass p-6 rounded-2xl h-64 relative overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 flex items-center justify-center">
-                <div className="text-center">
-                  <Globe className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" />
-                  <h4 className="text-lg font-semibold text-foreground mb-2">
-                    Interactive Map
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Coming soon - Find us on the map
-                  </p>
-                </div>
-              </div>
+              <LoadScript googleMapsApiKey="AIzaSyDB5MQFrIUmWf2sshK7dZOGVBZmQVEB1KY">
+                <GoogleMap
+                  mapContainerStyle={mapContainerStyle}
+                  center={center}
+                  zoom={15}
+                >
+                  <Marker
+                    position={center}
+                    title="Naukariwala Office"
+                    clickable={true}
+                  />
+                </GoogleMap>
+              </LoadScript>
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

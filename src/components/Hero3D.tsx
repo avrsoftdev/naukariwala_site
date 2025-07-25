@@ -96,8 +96,8 @@ const Hero3D = () => {
             className="mb-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-              Find Your{' '}
-              <span className="gradient-text animate-glow">Dream Job</span>
+             Where Talent Meets{' '}
+              <span className="gradient-text animate-glow">Opportunity</span>
               <br />
             
             </h1>

@@ -38,9 +38,11 @@ const Navigation = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center space-x-2"
           >
-            <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
-              <Briefcase className="w-6 h-6 text-white" />
-            </div>
+            <img
+              src="logonwn.png"
+              alt="NaukariWala Logo"
+              className="w-10 h-10 object-contain"
+            />
             <h1 className="text-2xl font-bold gradient-text">NaukariWala</h1>
           </motion.div>
 

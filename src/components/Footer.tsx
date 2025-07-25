@@ -72,8 +72,13 @@ const Footer = () => {
                 className="space-y-6"
               >
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 gradient-primary rounded-xl flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10  rounded-xl flex items-center justify-center">
+                    {/* <Briefcase className="w-6 h-6 text-white" /> */}
+                    <img
+                      src="logonwn.png"
+                      alt="NaukariWala Logo"
+                      className="w-8 h-8 object-contain"
+                    />
                   </div>
                   <h3 className="text-2xl font-bold gradient-text">NaukariWala</h3>
                 </div>
@@ -115,7 +120,6 @@ const Footer = () => {
                 </div>
               </motion.div>
             </div>
-
             {/* Footer Links */}
             {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
               <motion.div
