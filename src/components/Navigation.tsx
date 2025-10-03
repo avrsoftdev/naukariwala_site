@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Briefcase, User, Building2 } from 'lucide-react';
+import { Menu, X, Briefcase, User, Building2, Shield } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ const Navigation = () => {
     { name: 'Jobs', href: '#jobs', icon: Briefcase },
     { name: 'About', href: '#about', icon: User },
     { name: 'Contact', href: '#contact', icon: Building2 },
+    { name: 'Privacy Policy', href: '/privacy', icon: Shield },
   ];
 
   return (
@@ -49,17 +51,25 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <motion.div
                 key={item.name}
-                href={item.href}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-300 hover-lift"
               >
-                <item.icon className="w-4 h-4" />
-                <span className="font-medium">{item.name}</span>
-              </motion.a>
+                {item.name === 'Privacy Policy' ? (
+                  <Link to={item.href} className="flex items-center space-x-2">
+                    <item.icon className="w-4 h-4" />
+                    <span className="font-medium">{item.name}</span>
+                  </Link>
+                ) : (
+                  <a href={item.href} className="flex items-center space-x-2">
+                    <item.icon className="w-4 h-4" />
+                    <span className="font-medium">{item.name}</span>
+                  </a>
+                )}
+              </motion.div>
             ))}
           </nav>
 
@@ -99,15 +109,30 @@ const Navigation = () => {
         >
           <div className="py-4 space-y-4">
             {navItems.map((item) => (
-              <a
+              <div
                 key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-300 py-2"
               >
-                <item.icon className="w-4 h-4" />
-                <span>{item.name}</span>
-              </a>
+                {item.name === 'Privacy Policy' ? (
+                  <Link
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center space-x-2"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </Link>
+                ) : (
+                  <a
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center space-x-2"
+                  >
+                    <item.icon className="w-4 h-4" />
+                    <span>{item.name}</span>
+                  </a>
+                )}
+              </div>
             ))}
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost" className="justify-start">

@@ -81,8 +81,7 @@ const About = () => {
             About <span className="gradient-text">NaukariWala</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're revolutionizing the job search experience with cutting-edge technology, 
-            connecting talented professionals with their dream opportunities.
+         At Naukariwala, we believe finding the right job or talent should be simple. Our AI-powered platform connects job seekers with roles that match their skills and aspirations, while helping employers reach qualified candidates effortlessly. From personalized job recommendations and one-click applications to career tools, insights, and easy job postings, Naukariwala empowers professionals to grow and businesses to hire smarter—all in one intuitive platform.
           </p>
         </motion.div>
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { 
   Mail, 
@@ -8,8 +8,8 @@ import {
   Send, 
   MessageCircle,
   Clock,
-  Globe,
-  CheckCircle
+  CheckCircle,
+  X
 } from 'lucide-react';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
@@ -21,6 +21,7 @@ const Contact = () => {
     message: '',
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [modalContent, setModalContent] = useState<'terms' | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -34,7 +35,7 @@ const Contact = () => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000); // Reset isSubmitted after 3 seconds
+    setTimeout(() => setIsSubmitted(false), 3000);
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
@@ -65,17 +66,49 @@ const Contact = () => {
     }
   ];
 
-  // Google Map container style
   const mapContainerStyle = {
     height: '100%',
     width: '100%',
     borderRadius: '1rem'
   };
 
-  // Center coordinates for the map
   const center = {
     lat: 28.5811,
     lng: 77.4543
+  };
+
+  const termsContent = `
+# Terms and Conditions
+
+Last updated: October 3, 2025
+
+## 1. Acceptance of Terms
+By accessing or using the Naukariwala platform, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services.
+
+## 2. Use of Services
+- You must be at least 18 years old to use our platform.
+- You agree to provide accurate and complete information when using our services.
+- Unauthorized use of our platform, including but not limited to hacking or data scraping, is strictly prohibited.
+
+## 3. User Responsibilities
+- Users are responsible for maintaining the confidentiality of their account credentials.
+- You agree not to use the platform for any illegal or unauthorized purpose.
+
+## 4. Limitation of Liability
+Naukariwala is not liable for any direct, indirect, incidental, or consequential damages arising from the use of our services.
+
+## 5. Changes to Terms
+We reserve the right to modify these Terms at any time. Changes will be effective upon posting to our website.
+
+For any questions, contact us at info@naukariwala.com.
+  `;
+
+  const openModal = () => {
+    setModalContent('terms');
+  };
+
+  const closeModal = () => {
+    setModalContent(null);
   };
 
   return (
@@ -144,7 +177,6 @@ const Contact = () => {
               ))}
             </div>
 
-            {/* Google Map */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -269,9 +301,74 @@ const Contact = () => {
                 </Button>
               </form>
             )}
+
+            <div className="mt-8 flex justify-center">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto px-8 py-6 text-lg gradient-primary hover-glow shadow-primary"
+                onClick={openModal}
+              >
+                Terms and Conditions
+              </Button>
+            </div>
           </motion.div>
         </div>
       </div>
+
+      <AnimatePresence>
+        {modalContent && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={closeModal}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-background glass p-8 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-2xl font-bold text-foreground">Terms and Conditions</h3>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={closeModal}
+                  className="text-foreground hover:text-primary"
+                >
+                  <X className="w-6 h-6" />
+                </Button>
+              </div>
+              <div className="prose text-foreground">
+                {termsContent.split('\n').map((line, index) => (
+                  <p key={index} className="mb-4">
+                    {line.startsWith('# ') ? (
+                      <h2 className="text-xl font-semibold">{line.replace('# ', '')}</h2>
+                    ) : line.startsWith('## ') ? (
+                      <h3 className="text-lg font-medium">{line.replace('## ', '')}</h3>
+                    ) : line.startsWith('- ') ? (
+                      <li className="ml-4">{line.replace('- ', '')}</li>
+                    ) : (
+                      line
+                    )}
+                  </p>
+                ))}
+              </div>
+              <Button
+                size="lg"
+                className="mt-6 w-full gradient-primary hover-glow shadow-primary"
+                onClick={closeModal}
+              >
+                Close
+              </Button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
