@@ -13,10 +13,10 @@ Naukariwala ("we," "us," or "our") respects your privacy and is committed to pro
 
 ## 1. Information We Collect
 We collect information to provide and improve our services. This includes:
-- **Personal Information**: Name, email address, phone number, resume/CV details (e.g., education, work experience, skills), location (if enabled), and job preferences provided during registration or job applications.
-- **Device and Usage Data**: IP address, device type, operating system, app interactions (e.g., searches, applications viewed), and crash reports.
-- **Location Data**: Approximate location for job recommendations (e.g., jobs near you), only with your explicit permission via device settings.
-- **Third-Party Data**: Information from integrated services like social logins (e.g., Google or LinkedIn) or job boards.
+- Personal Information: Name, email address, phone number, resume/CV details (e.g., education, work experience, skills), location (if enabled), and job preferences provided during registration or job applications.
+- Device and Usage Data: IP address, device type, operating system, app interactions (e.g., searches, applications viewed), and crash reports.
+- Location Data: Approximate location for job recommendations (e.g., jobs near you), only with your explicit permission via device settings.
+- Third-Party Data: Information from integrated services like social logins (e.g., Google or LinkedIn) or job boards.
 
 We do not collect sensitive data such as race, religion, or health information unless voluntarily provided in your resume.
 
@@ -31,10 +31,10 @@ Your data helps us:
 
 ## 3. How We Share Your Information
 We do not sell your personal data. We may share it with:
-- **Service Providers**: Trusted third parties for hosting, analytics (e.g., Google Analytics), or payment processing, bound by confidentiality.
-- **Employers**: Resume and application details when you apply to a job, as needed for recruitment.
-- **Legal Authorities**: If required by law, subpoena, or to protect our rights/safety.
-- **Business Transfers**: In case of merger, acquisition, or sale of assets.
+- Service Providers: Trusted third parties for hosting, analytics (e.g., Google Analytics), or payment processing, bound by confidentiality.
+- Employers: Resume and application details when you apply to a job, as needed for recruitment.
+- Legal Authorities: If required by law, subpoena, or to protect our rights/safety.
+- Business Transfers: In case of merger, acquisition, or sale of assets.
 
 For international users, data may be transferred to servers in India or the US, compliant with local laws.
 
