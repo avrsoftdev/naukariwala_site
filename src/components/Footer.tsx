@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   Briefcase, 
   Mail, 
@@ -43,7 +44,7 @@ const Footer = () => {
       'Privacy Policy',
       'Terms of Service',
       'Cookie Policy',
-      'Security'
+      'Delete Account'
     ]
   };
 
@@ -72,8 +73,7 @@ const Footer = () => {
                 className="space-y-6"
               >
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10  rounded-xl flex items-center justify-center">
-                    {/* <Briefcase className="w-6 h-6 text-white" /> */}
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center">
                     <img
                       src="logonwn.png"
                       alt="NaukariWala Logo"
@@ -133,12 +133,21 @@ const Footer = () => {
                 <ul className="space-y-2">
                   {links.map((link) => (
                     <li key={link}>
-                      <a
-                        href="#"
-                        className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                      >
-                        {link}
-                      </a>
+                      {link === 'Delete Account' ? (
+                        <Link
+                          to="/delete-account"
+                          className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                        >
+                          {link}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
