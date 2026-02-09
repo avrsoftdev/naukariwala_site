@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 // import DeleteAccount from "./page/DeleteAccount";
 import NotFound from "./pages/NotFound";
-import DeleteAccount from "./components/deleteaccount";
+import DeleteAccount from "./components/DeleteAccount";
 
 const queryClient = new QueryClient();
 
