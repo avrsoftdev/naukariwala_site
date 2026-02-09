@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logoUrl from '../../images/logo_nw.png';
 import { 
   Briefcase, 
   Mail, 
@@ -75,7 +76,7 @@ const Footer = () => {
                 <div className="flex items-center space-x-2">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center">
                     <img
-                      src="logonwn.png"
+                      src={logoUrl}
                       alt="NaukariWala Logo"
                       className="w-8 h-8 object-contain"
                     />

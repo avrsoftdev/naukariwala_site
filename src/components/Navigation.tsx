@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Briefcase, User, Building2, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logoUrl from '../../images/logo_nw.png';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navigation = () => {
             className="flex items-center space-x-2"
           >
             <img
-              src="logonwn.png"
+              src={logoUrl}
               alt="NaukariWala Logo"
               className="w-10 h-10 object-contain"
             />
