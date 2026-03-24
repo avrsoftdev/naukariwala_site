@@ -12,6 +12,7 @@ import {
   Instagram,
   ArrowUp
 } from 'lucide-react';
+//demo change
 
 const Footer = () => {
   const scrollToTop = () => {
