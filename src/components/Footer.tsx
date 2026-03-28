@@ -13,7 +13,7 @@ import {
   ArrowUp
 } from 'lucide-react';
 //demo change
-
+///det
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
