@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Search, ArrowRight, Users, Building, TrendingUp } from 'lucide-react';
-import playStoreBadge from '../../naukariwala-3d-experience/dist/assets/playstore.png';
+import playStoreBadge from '@/assets/playstore.png';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.naukariwala.avr&pcampaignid=web_share';
 
