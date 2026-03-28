@@ -4,6 +4,9 @@ import * as THREE from 'three';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Search, ArrowRight, Users, Building, TrendingUp } from 'lucide-react';
+import playStoreBadge from '../../naukariwala-3d-experience/dist/assets/playstore.png';
+
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.naukariwala.avr&pcampaignid=web_share';
 
 // Simple floating sphere component using native Three.js
 const FloatingSphere = ({ position, color, size }: { position: [number, number, number], color: string, size: number }) => {
@@ -137,15 +140,22 @@ const Hero3D = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex flex-col items-center gap-5 mb-16"
           >
-            <Button size="lg" className="gradient-primary hover-glow shadow-primary px-8 py-4">
-              Browse Jobs
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="glass hover-lift px-8 py-4">
-              Post a Job
-            </Button>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex flex-col items-center gap-2 hover:opacity-90 transition-opacity duration-300"
+              aria-label="Download Naukariwala on Google Play"
+            >
+              <span className="text-sm text-muted-foreground">Download the Naukariwala app</span>
+              <img
+                src={playStoreBadge}
+                alt="Get it on Google Play"
+                className="h-14 w-auto rounded-lg shadow-lg"
+              />
+            </a>
           </motion.div>
 
           {/* Stats */}
