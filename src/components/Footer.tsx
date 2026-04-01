@@ -2,14 +2,13 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import logoUrl from '../../images/logo_nw.png';
 import { 
-  Briefcase, 
   Mail, 
   Phone, 
   MapPin,
-  Github,
-  Twitter,
   Linkedin,
   Instagram,
+  Youtube,
+  MessageCircle,
   ArrowUp
 } from 'lucide-react';
 //demo change
@@ -51,10 +50,26 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Instagram, href: '#', label: 'Instagram' }
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/avrsoftdev?igsh=MzF0amlpcGswMHR5',
+      label: 'Instagram'
+    },
+    {
+      icon: Youtube,
+      href: 'https://youtube.com/@avrsoftdev',
+      label: 'YouTube'
+    },
+    {
+      icon: MessageCircle,
+      href: 'https://whatsapp.com/channel/0029Vb7b7DR17Emw3JpjBh19',
+      label: 'WhatsApp'
+    },
+    {
+      icon: Linkedin,
+      href: 'https://www.linkedin.com/company/avr-softdev-private-limited/',
+      label: 'LinkedIn'
+    }
   ];
 
   return (
@@ -93,7 +108,7 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <Mail className="w-4 h-4" />
-                    <span>hello@naukariwala.com</span>
+                    <span>naukariwala.avr@gmail.com</span>
                   </div>
                   <div className="flex items-center space-x-3 text-muted-foreground">
                     <Phone className="w-4 h-4" />
@@ -111,6 +126,8 @@ const Footer = () => {
                     <motion.a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       className="w-10 h-10 glass rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
