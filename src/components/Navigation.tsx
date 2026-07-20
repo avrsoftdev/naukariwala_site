@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Briefcase, User, Building2, Shield } from 'lucide-react';
+import { Menu, X, Briefcase, User, Building2, Shield, GraduationCap, CalendarDays, Handshake } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoUrl from '../../images/logo_nw.png';
 
@@ -19,6 +19,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Jobs', href: '#jobs', icon: Briefcase },
+    { name: 'Employers', href: '#jobs', icon: Handshake },
+    { name: 'Walk-in Drives', href: '#jobs', icon: CalendarDays },
+    { name: 'Training Programs', href: '/training', icon: GraduationCap },
     { name: 'About', href: '#about', icon: User },
     { name: 'Contact', href: '#contact', icon: Building2 },
     { name: 'Privacy Policy', href: '/privacy', icon: Shield },
@@ -59,7 +62,7 @@ const Navigation = () => {
                 transition={{ delay: 0.3 + index * 0.1 }}
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-300 hover-lift"
               >
-                {item.name === 'Privacy Policy' ? (
+                {item.href.startsWith('/') ? (
                   <Link to={item.href} className="flex items-center space-x-2">
                     <item.icon className="w-4 h-4" />
                     <span className="font-medium">{item.name}</span>
@@ -114,7 +117,7 @@ const Navigation = () => {
                 key={item.name}
                 className="flex items-center space-x-2 text-foreground hover:text-primary transition-colors duration-300 py-2"
               >
-                {item.name === 'Privacy Policy' ? (
+                {item.href.startsWith('/') ? (
                   <Link
                     to={item.href}
                     onClick={() => setIsMenuOpen(false)}

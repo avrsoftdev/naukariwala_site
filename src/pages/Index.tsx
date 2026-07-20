@@ -1,6 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero3D from '@/components/Hero3D';
 import JobListings from '@/components/JobListings';
+import TrainingSection from '@/components/TrainingSection';
 import About from '@/components/About';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -11,6 +12,7 @@ const Index = () => {
       <Navigation />
       <Hero3D />
       <JobListings />
+      <TrainingSection />
       <About />
       <Contact />
       <Footer />
