@@ -46,6 +46,7 @@ const TrainingPage = () => {
   const heroTitle = course ? course.title : 'Industry-Oriented Professional Training Programs';
   const heroSubtitle = course ? course.shortDescription : 'Learn from experts. Work on Live Projects. Get Certified. Get Placed.';
   const heroDescription = course ? course.overview : 'Join premium training programs that lead to placements, internships, and confident career growth.';
+  const brochureUrl = 'https://drive.google.com/file/d/1zREQhnfCZtH0opmGMwcYI7vGNWYPNRf7/view?usp=drive_link';
 
   const renderSection = (title: string, items: string[]) => (
     <div className="glass rounded-3xl p-6">
@@ -92,7 +93,11 @@ const TrainingPage = () => {
                 <Button className="gradient-primary hover-glow shadow-primary px-6">
                   Apply Now <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
-                <Button variant="outline" className="border-primary/30 bg-white/5 px-6">
+                <Button
+                  variant="outline"
+                  className="border-primary/30 bg-white/5 px-6"
+                  onClick={() => window.open(brochureUrl, '_blank', 'noopener,noreferrer')}
+                >
                   Download Brochure
                 </Button>
               </div>
