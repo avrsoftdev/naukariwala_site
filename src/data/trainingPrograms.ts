@@ -1,3 +1,19 @@
+import autocadElectricalImage from '@/assets/autocadelectrical.png';
+import autocadMechanicalImage from '@/assets/autocadmech.png';
+import electricalDesignImage from '@/assets/electricaldesign.png';
+import embeddedSystemImage from '@/assets/embeddedsystem.png';
+import hvacImage from '@/assets/hvac.png';
+import industrialAutomationImage from '@/assets/industrialautomation.png';
+import industrialMechanicalImage from '@/assets/industrialmechanical.png';
+import industrialSoftwareImage from '@/assets/industrialsoftware.png';
+import matlabImage from '@/assets/matlabsimulink.png';
+import plcProgrammingImage from '@/assets/plcprogramming.png';
+import scadaImage from '@/assets/scada.png';
+import softwareFullStackImage from '@/assets/softwarerrfullstack.png';
+import solarDesignImage from '@/assets/solardesign.png';
+import solarPlantOperationImage from '@/assets/solarplantoperation.png';
+import solarPvInstallerImage from '@/assets/solarpvtinstaller.png';
+
 export interface TrainingCourse {
   slug: string;
   title: string;
@@ -32,7 +48,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '3 Months',
     mode: 'Online + Offline',
     level: 'Beginner',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
+    image: 'electricalDesignImage',
     overview: 'This course equips students and professionals with the basics and advanced methods of electrical design engineering for power, manufacturing, and industrial projects.',
     whoCanJoin: ['Diploma and degree students', 'Working professionals in electrical maintenance', 'Freshers targeting design roles'],
     curriculum: ['Electrical load estimation', 'Single line diagrams', 'Cable sizing and protection', 'Panel design fundamentals'],
@@ -57,7 +73,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '4 Months',
     mode: 'Weekend + Weekday',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=900&q=80',
+    image: hvacImage,
     overview: 'Learn cooling load calculations, ducting layouts, piping design, equipment selection, and drafting standards for HVAC projects.',
     whoCanJoin: ['Mechanical diploma holders', 'Architecture and MEP learners', 'Engineers aiming for HVAC roles'],
     curriculum: ['Cooling and heating load calculations', 'Duct and pipe sizing', 'Equipment selection', 'HVAC drafting standards'],
@@ -81,7 +97,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '3 Months',
     mode: 'Hybrid',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
+    image: 'plcProgrammingImage',
     overview: 'Understand PLC architecture, ladder logic, timers, counters, and networking concepts while working on practical automation projects.',
     whoCanJoin: ['Electrical and electronics students', 'Maintenance technicians', 'Automation aspirants'],
     curriculum: ['PLC architecture', 'Ladder logic', 'Timers and counters', 'SCADA integration basics'],
@@ -105,7 +121,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '4 Months',
     mode: 'Online',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80',
+    image: scadaImage,
     overview: 'This program gives learners hands-on experience in designing SCADA HMIs, tag management, trends, alarms, and connectivity.',
     whoCanJoin: ['Automation engineers', 'Instrumentation graduates', 'Control systems professionals'],
     curriculum: ['SCADA architecture', 'Tag creation', 'Alarms and trends', 'Communication drivers'],
@@ -129,7 +145,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '2 Months',
     mode: 'Weekend',
     level: 'Beginner',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
+    image: autocadElectricalImage,
     overview: 'Master schematic drafting, wiring diagrams, and electrical layouts for residential and industrial applications.',
     whoCanJoin: ['Electrical diploma students', 'Draftsmen', 'Freshers entering the design sector'],
     curriculum: ['Electrical symbols', 'Panel wiring drawings', 'Component libraries', 'Title block creation'],
@@ -153,7 +169,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '2 Months',
     mode: 'Hybrid',
     level: 'Beginner',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80',
+    image: autocadMechanicalImage,
     overview: 'Students learn 2D drafting, parametric design, and mechanical sheet views widely used in fabrication and plant industries.',
     whoCanJoin: ['Mechanical engineering students', 'Drafting professionals', 'Freshers seeking CAD roles'],
     curriculum: ['2D drafting', 'Mechanical symbols', 'Dimensioning', 'Assembly drawings'],
@@ -177,7 +193,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '6 Months',
     mode: 'Weekday',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=900&q=80',
+    image: industrialAutomationImage,
     overview: 'Build a strong foundation in industrial automation for modern factories, utilities, and production systems.',
     whoCanJoin: ['Electrical and electronics graduates', 'Technicians', 'Maintenance professionals'],
     curriculum: ['Sensors and actuators', 'Motor control', 'Drive systems', 'Industrial networks'],
@@ -201,7 +217,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '5 Months',
     mode: 'Weekend + Weekday',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80',
+    image: industrialAutomationImage,
     overview: 'This course introduces integrated building automation concepts with focus on controls, sensors, and energy-efficient systems.',
     whoCanJoin: ['MEP professionals', 'Electronics engineers', 'Freshers targeting smart building roles'],
     curriculum: ['BMS architecture', 'Lighting and HVAC controls', 'Energy management', 'Security integration'],
@@ -225,7 +241,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '4 Months',
     mode: 'Hybrid',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80',
+    image: industrialMechanicalImage,
     overview: 'Learners gain exposure to machine components, maintenance practices, process equipment, and industrial operation fundamentals.',
     whoCanJoin: ['Mechanical diploma/degree students', 'Workshop professionals', 'Maintenance engineers'],
     curriculum: ['Mechanical systems overview', 'Machine maintenance', 'Plant operation basics', 'Material handling'],
@@ -249,7 +265,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '5 Months',
     mode: 'Online + Offline',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80',
+    image: 'embeddedSystemImage',
     overview: 'Learn embedded electronics from the ground up with programming, microcontroller interfacing, and project-based instruction.',
     whoCanJoin: ['Electronics students', 'Hardware enthusiasts', 'Working professionals wanting to switch to embedded products'],
     curriculum: ['Embedded C', 'Microcontrollers', 'Sensors and interfacing', 'Communication protocols'],
@@ -273,7 +289,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '6 Months',
     mode: 'Online',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
+    image: industrialSoftwareImage,
     overview: 'A career-focused course for learners who want to combine engineering understanding with modern software tools.',
     whoCanJoin: ['Engineering graduates', 'Software beginners', 'Working professionals from technical domains'],
     curriculum: ['Programming fundamentals', 'Industrial data handling', 'Dashboards and analytics', 'API integration'],
@@ -297,7 +313,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '6 Months',
     mode: 'Online',
     level: 'Beginner',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',
+    image: softwareFullStackImage,
     overview: 'Learn HTML, CSS, JavaScript, React, Node.js, APIs, databases, and deployment practices through mentor-led projects.',
     whoCanJoin: ['Students', 'Career switchers', 'Freshers looking for web development roles'],
     curriculum: ['Frontend fundamentals', 'React development', 'Backend APIs', 'Database management'],
@@ -321,7 +337,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '3 Months',
     mode: 'Hybrid',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=900&q=80',
+    image: matlabImage,
     overview: 'Use MATLAB and Simulink to develop models for controls, signal processing, circuits, and mechatronics systems.',
     whoCanJoin: ['Engineering students', 'Research aspirants', 'Professionals in controls and simulation'],
     curriculum: ['MATLAB basics', 'Signal processing', 'Simulink model design', 'Control blocks'],
@@ -345,7 +361,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '4 Months',
     mode: 'Weekend + Weekday',
     level: 'Beginner',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80',
+    image: solarPvInstallerImage,
     overview: 'This dedicated solar technician program covers fundamentals, installation, safety, commissioning, and maintenance for residential and commercial solar projects.',
     whoCanJoin: ['Students seeking fast employment', 'Electricians', 'Engineers targeting solar careers'],
     curriculum: ['Solar fundamentals', 'PV modules', 'Inverters', 'Mounting structures', 'System design', 'Electrical wiring', 'Safety', 'Installation', 'Commissioning', 'Net metering', 'Operation & maintenance', 'SCADA monitoring'],
@@ -371,7 +387,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '4 Months',
     mode: 'Hybrid',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=900&q=80',
+    image: solarDesignImage,
     overview: 'Master solar design fundamentals with a focus on load calculations, shading analysis, string design, and electrical layout planning.',
     whoCanJoin: ['Electrical and mechanical graduates', 'Solar technicians', 'Engineers exploring solar careers'],
     curriculum: ['Solar resource basics', 'PV system sizing', 'Wiring and protection', 'Layout design'],
@@ -395,7 +411,7 @@ export const trainingCourses: TrainingCourse[] = [
     duration: '3 Months',
     mode: 'Weekend',
     level: 'Intermediate',
-    image: 'https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?auto=format&fit=crop&w=900&q=80',
+    image: solarPlantOperationImage,
     overview: 'Cover plant performance analysis, preventive maintenance schedules, safety protocols, and troubleshooting methods used in operation teams.',
     whoCanJoin: ['Solar technicians', 'Engineers in operations', 'Maintenance professionals'],
     curriculum: ['Plant performance monitoring', 'Preventive maintenance', 'Troubleshooting', 'SCADA review'],
