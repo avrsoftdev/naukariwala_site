@@ -9,12 +9,14 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 // import DeleteAccount from "./page/DeleteAccount";
 import NotFound from "./pages/NotFound";
 import DeleteAccount from "./components/DeleteAccount";
+import PromoBanner from "./components/PromoBanner";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+        <PromoBanner />
       <Toaster />
       <Sonner />
       <BrowserRouter>
